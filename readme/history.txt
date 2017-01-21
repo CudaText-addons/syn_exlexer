@@ -1,0 +1,10 @@
+
+2017.01.21
++ name.cuda-lexmap packed too
+- fix: packing name with + (eg, C++)
+
+2015.01.23 (1.1.1)
+- checks for !@#$%'"/\;:-like chars in lexer name
+
+1.1.0
++ sublexers also packed, if they are disabled(internal lexers)

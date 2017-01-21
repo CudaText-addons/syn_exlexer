@@ -1,0 +1,10 @@
+[info]
+title=ExLexer
+desc=Exports any installed lexer to zip file (for other users)
+type=py-plugin
+subdir=syn_exlexer
+
+[ini]
+section=Commands
+id=ExLexer
+params=run;
