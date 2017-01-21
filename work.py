@@ -4,7 +4,7 @@ from .zip_proc import *
 
 def do_export(folder, lexer):
     lexer_ = lexer
-    for s in '/\|`~#$^&*=;:\'"<>?':
+    for s in '/\|`~$^&*=;:\'"<>?':
         lexer_ = lexer_.replace(s, '_') #for lexer filename (don't replace space)
     lexer__ = lexer_.replace(' ', '_') #for zip filename (replace space)
     

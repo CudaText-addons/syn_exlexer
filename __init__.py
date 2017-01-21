@@ -2,17 +2,11 @@ import os
 from sw import *
 from .work import *
 
-FOLDER = r'c:\SynWrite_lexers'
-
 class Command:
     def run(self):
-        if app_api_version() < '1.0.142':
-            msg_box(MSG_ERROR, 'ExLexer: app update needed')
-            return
-    
-        folder = FOLDER
+        folder = r'c:\SynWrite_lexers'
         while not os.path.isdir(folder):
-            folder = dlg_input('Folder:', folder, '', '')
+            folder = dlg_input('Folder for zip file:', folder, '', '')
             if not folder: return
             try:
                 os.mkdir(folder)
