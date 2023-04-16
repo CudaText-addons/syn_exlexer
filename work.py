@@ -40,9 +40,10 @@ def do_export(folder, lexer):
             for link in links:
                 if not lexer_proc(LEXER_GET_ENABLED, link):
                     link_ = link.replace('/', '_')
-                    fn_link_lex = os.path.join(folder, link_+'.lcf')
+                    fn_link_lex = os.path.join(app_exe_dir(), 'Data', 'lexlib', link_+'.lcf')
+                    fn_link_lexmap = os.path.join(app_exe_dir(), 'Data', 'lexlib', link_+'.cuda-lexmap')
                     fn_link_acp = os.path.join(app_exe_dir(), 'Data', 'autocomplete', link_+'.acp')
-                    lexer_proc(LEXER_EXPORT, link+';'+fn_link_lex)
+                    #lexer_proc(LEXER_EXPORT, link+';'+fn_link_lex)
                     
                     if not fn_link_lex in zip_list:
                         f.write('[lexer%d]\n' % lexer_index)
@@ -50,6 +51,8 @@ def do_export(folder, lexer):
                         
                         lexer_index += 1
                         zip_list += [fn_link_lex]
+                        if os.path.isfile(fn_link_lexmap):
+                            zip_list += [fn_link_lexmap]
                         if os.path.isfile(fn_link_acp):
                             zip_list += [fn_link_acp]
                 
@@ -60,6 +63,7 @@ def do_export(folder, lexer):
                 f.write('link%d=%s\n' % (i+1, link))
                 
 
+    #print('zip_list:', zip_list)
     make_zip_file(fn_zip, zip_list)
     
     #delete temp files

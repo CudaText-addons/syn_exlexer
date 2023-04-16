@@ -1,10 +1,12 @@
+2023.04.16
+- fix: missing zipping of file *.cuda-lexmap for sublexers
 
 2017.01.21
-+ name.cuda-lexmap packed too
-- fix: packing name with + (eg, C++)
++ add: file *.cuda-lexmap is packed too
+- fix: packing name with '+' (e.g. lexer C++)
 
-2015.01.23 (1.1.1)
-- checks for !@#$%'"/\;:-like chars in lexer name
+2015.01.23
+- fix: checks for !@#$%'"/\;:-like chars in lexer name
 
 1.1.0
-+ sublexers also packed, if they are disabled(internal lexers)
++ add: sublexers also packed, if they are disabled (internal lexers)
